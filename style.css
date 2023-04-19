@@ -1,0 +1,77 @@
+li{
+display: inline;
+padding: 5px;
+font-size: 1rem;
+margin-top: 0;
+padding: 5px 0 5px 5px;
+width: 25%;
+background-color: rgba(0, 255, 221, 0.267);
+margin: 10px;
+border-radius: 2px;
+}
+ul{
+    display: block;
+    float: right;
+    padding: 0px;
+    margin-top: -20px;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    position: relative;
+    margin-right: 4px;
+}
+.cart a{
+    background-color: blueviolet;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    justify-content: space-between;
+    justify-content: space-around;
+}
+.image button{
+    cursor: pointer;
+}
+.delete{
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin-left: 10px;
+}
+.select{
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin-left: 10px;    
+}
+#heart{
+    width: 45px;
+    height: 30px;
+    position: relative;
+    margin-left: 5px;
+}
+#like{
+width: 45px;
+height: 30px;
+position: relative;
+margin-left: 5px;
+}
+.image{
+    width: 500px;
+    position: relative;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 40px;
+}
+.all{
+    background-color: rgb(252, 238, 238);
+}
+.Total{
+    display: block;
+    margin: auto;
+  
+}
