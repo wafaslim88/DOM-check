@@ -5,8 +5,6 @@ var num = document.getElementById('num-btn');
 var minus = document.getElementById('minus-btn');
 
 
-/*plus.addEventListener = ("click",Increment());
-minus.addEventListener = ("click",Decrement());*/
 
 let a = 0;
 num.innerText=a;
@@ -15,12 +13,14 @@ function Increment(){
     a=a+1; 
     num.innerText=a;
     console.log(a) ;
+    updateCartTotal();
 }
 
 function Decrement(){
     a=a-1;
     num.innerText=a;
     console.log(a);
+    updateCartTotal();
 }
 var pluss = document.getElementById('btplus');
 var numm = document.getElementById('btnum');
@@ -33,21 +33,18 @@ function Incrementt(){
     b=b+1; 
     numm.innerText=b;
     console.log(b) ;
+    updateCartTotal();
 }
 
 function Decrementt(){
     b=b-1;
     numm.innerText=b;
     console.log(b);
+    updateCartTotal();
 }
 //------------------------------------------------------
 
-   /* var image = document.getElementsByClassName('image');
-    var mg =  document.getElementsByClassName('mg');
-    var plus = document.getElementById('plus-btn');
-    var num = document.getElementById('num-btn');
-    var minus = document.getElementById('minus-btn');
-    image.removeChild(mg);*/
+  
 
    
     function deleteItems(){ 
@@ -56,7 +53,7 @@ function Decrementt(){
     for ( let i=0 ; i<image.length ; i++) {
 
       image[i].remove(image);
-    
+      updateCartTotal();
     }
     }
     //------------------------------------------------------- 
@@ -64,10 +61,10 @@ function Decrementt(){
     function deleteIt(){ 
         let select = document.getElementsByClassName('select');
         let item = document.getElementsByClassName('item');
-        for ( let i=0 ; i<item.length ; i++) {
+        for ( let i=0 ; i< product.length ; i++) {
     
-          item[i].remove(item);
-        
+         item[i].remove(item);
+         updateCartTotal();
         }
         }
          
@@ -79,28 +76,44 @@ let btnLike = document.getElementById('like');
 btnLike.addEventListener("click",()=> btnLike.style.color='red');
 
 //----------------------------------------------------------------------------
-/*let cartTotal = document.getElementsByClassName('total');
-function totalPrice(){
-    let T = 0;
-    let Price = q * price; //q is the quantity of each item in the cart // price is the price of each item in the cart
-    for(let i =0; i< Price.length ; i++)
-    cartTotal.innertext = T;
-    T+= Price[i];
-  
 
-}*/
- var items = document.getElementsByClassName('Item');
- var total = document.getElementById('finalPrice');
+
+/*
+ var products = document.getElementsByClassName('container');
+ var total = document.getElementsByClassName('total');
+ var pls = document.getElementsByClassName('pls');
 
  function sum(){
   let  s = 0 ;
-   for ( let i=0 ; i < items.length; i++){
-   let item = items[i];
+   for ( let i=0 ; i < products.length; i++){
+   let item = products[i];
    s =
     s + 
-   item.querySelector("#price").innerText * item.querySelector("#btnum").value;
+   item.querySelector("#price").innerText * item.querySelector(".nm").value;
  }
  return total.value=s;
 }
 
-pluss.addEventListener("click",sum());
+pls.addEventListener("click",sum());*/
+
+//calculate total price
+ 
+var pls = document.getElementsByClassName('pls');
+
+function updateCartTotal(){
+    var cartItemContainer = document.getElementsByClassName('container')[0]
+    var Items = cartItemContainer.getElementsByClassName('cart-item')
+    var total = 0;
+    for( var i = 0 ; i < Items.length ; i++ ) {
+        var Item  = Items[i];
+        var priceElement = Item.getElementById('price')[0]
+        var quantityElement = Item.getElementsByClassName('nm')[0]
+        var price = parsefloat(priceElement.innerText.replace('TND', ''))
+        var quantity = quantityElement.value
+        total+= (price*quantity)
+    }
+    document.querySelector('cart-total-price')[0].innerText = total + 'TND'
+}
+updateCartTotal();
+
+pls.addEventListener("click",  updateCartTotal());

@@ -26,9 +26,9 @@
         <div class="image">
             <img class="mg" style="border: solid 1px; color: gray;" src="https://www.paranet.tn/6533-cart_default/gamarde-bebe-eau-nettoyante-400ml.jpg" alt="GAMARDE BEBE EAU NETTOYANTE 400ML">
             <h1 class="mg" style="font-size: small;">GAMARDE BEBE EAU NETTOYANTE 400ML</h1>
-            <h2 class="mg" style="color: palevioletred;">48,500 TND</h2>
-            <button id="plus-btn" style="height: 20px;" type="button" onclick="Increment()">+</button>
-            <button id="num-btn" style="height: 20px;"></button>
+            <h2 class="mg" id="price" style="color: palevioletred;">48,500 TND</h2>
+            <button id="plus-btn" class="pls" style="height: 20px;" type="button" onclick="Increment()">+</button>
+            <button id="num-btn"  class="nm" type="number" style="height: 20px;"></button>
             <button id="minus-btn" style="height: 20px;" type="button" onclick="Decrement()">-</button>
             <button class="delete" onclick="deleteItems()"><ion-icon name="trash-outline"></ion-icon></button>
             <button id="heart"><ion-icon name="heart-circle-outline"></ion-icon></button>
@@ -38,16 +38,18 @@
             <img class="mg" style="border: solid 1px; color: gray;" src="https://www.paranet.tn/5919-cart_default/puressentiel-baume-de-massage-pectoral-pour-bebe-30ml.jpg" alt="PURESSENTIEL BAUME DE MASSAGE PECTORAL POUR BEBE 30ML">
             <h1 class="mg" style="font-size: small;">PURESSENTIEL BAUME DE MASSAGE PECTORAL POUR BEBE 30ML</h1>
             <h2 class="mg" id="price" style="color: palevioletred;">35,100 TND</h2>
-            <button id="btplus" style="height: 20px;" type="button" onclick="Incrementt()">+</button>
-            <button id="btnum" style="height: 20px;"></button>
+            <button id="btplus" class="pls" style="height: 20px;" type="button" onclick="Incrementt()">+</button>
+            <button id="btnum" class="nm" type="number" style="height: 20px;"></button>
             <button id="btmin" style="height: 20px;" type="button" onclick="Decrementt()">-</button>
             <button  class="select" onclick="deleteIt()"><ion-icon name="trash-outline" ></ion-icon></button>
             <button id="like"><ion-icon name="heart-circle-outline"></ion-icon></button>
         </div>
      </div>
-     <div id="finalPrice">Total Price</div>
-        <button><div class="total"style="text-align: center;"></div></button>
-       
+
+       <div class="cart-total">
+          <strong class="cart-total-title">Total</strong>
+          <span class="cart-total-price">83,600 TND</span>
+       </div>
      
  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
